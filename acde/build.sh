@@ -3,7 +3,6 @@ set -euo pipefail
 root=$(cd "$(dirname "$0")/.." && pwd)
 cd "$root"
 pnpm="npx --yes pnpm@9"
-sed -i "/virtual:pwa-register/d;/registerSW/d" src/main.ts
 $pnpm install --frozen-lockfile --ignore-scripts
 NODE_OPTIONS=--max-old-space-size=6144 $pnpm exec vite build
 public="$root/acde/public"
