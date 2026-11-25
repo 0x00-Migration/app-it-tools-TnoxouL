@@ -1,0 +1,9 @@
+*
+!build.sh
+!README.md
+!acde.config.jsonc
+!icon.svg
+!package.json
+!server.ts
+!acde-compat.js
+!.gitignore
