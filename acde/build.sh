@@ -11,5 +11,4 @@ mkdir -p "$public"
 find "$public" -mindepth 1 -delete
 cp -r "$root/dist/." "$public/"
 find "$public" -name '*.map' -delete
-cp "$root/acde/acde-compat.js" "$public/acde-compat.js"
-find "$public" -name '*.html' -exec sed -i 's#<head>#<head><script src="/acde-compat.js"></script>#' {} +
+python3 "$root/../../packages/runtime-shims/install.py" "$public"
