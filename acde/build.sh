@@ -10,4 +10,4 @@ mkdir -p "$public"
 find "$public" -mindepth 1 -delete
 cp -r "$root/dist/." "$public/"
 find "$public" -name '*.map' -delete
-python3 "$root/../../packages/runtime-shims/install.py" "$public"
+python3 "$root/acde/runtime-shims/install.py" "$public"
