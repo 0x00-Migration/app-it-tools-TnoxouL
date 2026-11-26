@@ -1,0 +1,16 @@
+{
+  "type": "app",
+  "id": "it-tools",
+  "label": "IT 工具箱",
+  "icon": "icon.svg",
+  "entry": "/",
+  "public": "public",
+  "size": [1360, 860],
+  "heapMb": 1024,
+  "capabilities": {},
+  "optional": [],
+  "services": [],
+  "requests": [],
+  "schemes": [],
+  "backend": { "entry": "server.ts", "port": 3000 }
+}
