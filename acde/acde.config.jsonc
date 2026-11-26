@@ -3,7 +3,7 @@
   "id": "it-tools",
   "label": "IT 工具箱",
   "icon": "icon.svg",
-  "entry": "/",
+  "entry": "index.html",
   "public": "public",
   "size": [1360, 860],
   "heapMb": 1024,
@@ -11,6 +11,5 @@
   "optional": [],
   "services": [],
   "requests": [],
-  "schemes": [],
-  "backend": { "entry": "server.ts", "port": 3000 }
+  "schemes": []
 }

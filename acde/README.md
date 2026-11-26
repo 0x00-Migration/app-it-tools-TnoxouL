@@ -14,7 +14,7 @@ cd acde && acdev dev           # 或 acdev dev --headless
 
 | 问题 | 做法 |
 | --- | --- |
-| acdev 会重打包页面入口脚本；站点用根路径引用 | 成品放 `public/`，应用声明 `"entry": "/"`，`server.ts` 原样提供，无扩展名的路径回退到 `index.html`（Vue 路由用 history 模式） |
+| 站点用根路径引用资源 | 构建产物的 `index.html` 作为入口放在 `acde/`，其余文件放 `public/`；acdev 原样保留指向 `public/` 的根路径引用，不需要后台 |
 | 不需要 Service Worker | `build.sh` 构建前删掉 `src/main.ts` 里的 `registerSW` |
 | `performance.measure` 引用不存在的标记；`Node.prototype.nodeName`、`nodeType` 取值不对，DOMPurify 渲染 Markdown 时误删节点 | 子模块 `acde/runtime-shims`（[acde-runtime-shims](https://github.com/TnoxouL/acde-runtime-shims)）构建时注入兜底脚本 |
 

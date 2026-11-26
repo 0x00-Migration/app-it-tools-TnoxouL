@@ -11,3 +11,4 @@ find "$public" -mindepth 1 -delete
 cp -r "$root/dist/." "$public/"
 find "$public" -name '*.map' -delete
 python3 "$root/acde/runtime-shims/install.py" "$public"
+mv "$public/index.html" "$root/acde/index.html"
