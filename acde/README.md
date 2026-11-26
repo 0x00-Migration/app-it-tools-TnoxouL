@@ -5,6 +5,7 @@
 ## 构建与运行
 
 ```bash
+git submodule update --init   # 取兜底脚本 acde/runtime-shims
 acde/build.sh                  # 安装依赖、构建、整理到 acde/public/
 cd acde && acdev dev           # 或 acdev dev --headless
 ```
@@ -15,7 +16,7 @@ cd acde && acdev dev           # 或 acdev dev --headless
 | --- | --- |
 | acdev 会重打包页面入口脚本；站点用根路径引用 | 成品放 `public/`，应用声明 `"entry": "/"`，`server.ts` 原样提供，无扩展名的路径回退到 `index.html`（Vue 路由用 history 模式） |
 | 不需要 Service Worker | `build.sh` 构建前删掉 `src/main.ts` 里的 `registerSW` |
-| `performance.measure` 引用不存在的标记等 | `acde-compat.js` 兜住异常，并让 `Node.prototype.nodeName`、`nodeType` 按节点类别回退 |
+| `performance.measure` 引用不存在的标记；`Node.prototype.nodeName`、`nodeType` 取值不对，DOMPurify 渲染 Markdown 时误删节点 | 子模块 `acde/runtime-shims`（[acde-runtime-shims](https://github.com/TnoxouL/acde-runtime-shims)）构建时注入兜底脚本 |
 
 ## 验证过的
 

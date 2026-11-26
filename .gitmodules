@@ -1,0 +1,3 @@
+[submodule "acde/runtime-shims"]
+	path = acde/runtime-shims
+	url = https://github.com/TnoxouL/acde-runtime-shims.git
